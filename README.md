@@ -7,6 +7,9 @@ There is a Ben and Jerry's ice cream machine at UTown that charges $1 to play. G
 ## Answer
 We are interested in modelling the number of tries before success. Each tries can be simplified to 2 outcomes. Success(get the ice cream) and failure (Do not get the ice cream). Therefore a geometric distribution is appropriate to model what we want. 
 Refer to the python file attached for a rough attempt at modelling.
+methodology:
+1. Code for vending machine to generate sample data.
+2. Using p = n/total number of trials before success as a sample probability.
 
 # Question 2
 m&m candies are manufactured at two different plants in the US with the following color distribution
@@ -16,3 +19,12 @@ Suppose you bought many packets of m&m, how can you determine which plant these 
 Bonus: The methodology in this article is flawed. Can you explain why?
 
 ## Answer
+Using a chi-squared test.
+1. Find the average proportion for each color in each bag.
+2. Repeat step 1 over multiple bags maybe 100.
+3. calculate the average poportion of each color.
+4. Carry out the chi-square test using the cleveland and hacketstown proportions. 
+5. Set the significance level at 0.01. Reject the null hypothesis (From the same plant) if p value from chi-squared test < significance level.
+6. Additionally, obtain the 99% confidence interval and check if the cleveland and hacketstown porportions lie within the CI.
+
+In the article, the methodology differes slighty from my proposed method. The author has only access to M&M that have been opened and pour into a jug and he has to take each scoop daily. Taking each scoop daily might not be representative of the population. Additionally, due to this limitation, he is unable to calcualte proportion for each bag and taking the average of all the bags and use it as a proportion. The author method will not account for any variation between bags. Taking the average proportion of all the bags may provide a more robust analysis. 
